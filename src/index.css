@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  /* Typography */
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Brand Violet / Indigo Palette */
+  --color-brand-400: oklch(0.72 0.17 282);
+  --color-brand-500: oklch(0.60 0.22 282);
+  --color-brand-600: oklch(0.54 0.23 282);
+  --color-brand-900: oklch(0.28 0.13 280);
+
+  /* Surfaces & Backgrounds */
+  --color-surface-canvas: oklch(0.13 0.02 268);     /* Main app background */
+  --color-surface-sidebar: oklch(0.145 0.022 268);  /* Left navigation rail */
+  --color-surface-card: oklch(0.165 0.025 268);     /* KPI & chart card surface */
+  --color-surface-input: oklch(0.185 0.025 268);    /* Search input & inner tiles */
+  --color-surface-elevated: oklch(0.22 0.03 272);   /* Hover states */
+  --color-surface-hero: oklch(0.24 0.11 278);
+
+  /* Borders */
+  --color-border-subtle: oklch(0.25 0.03 270);
+  --color-border-focus: oklch(0.60 0.22 282);
+
+  /* Text Hierarchy */
+  --color-ink-primary: oklch(0.98 0.005 270);
+  --color-ink-secondary: oklch(0.76 0.02 272);
+  --color-ink-muted: oklch(0.56 0.02 270);
+
+  /* Semantic & Chart Accents */
+  --color-accent-emerald: oklch(0.72 0.17 160);
+  --color-accent-amber: oklch(0.78 0.16 72);
+  --color-accent-indigo: oklch(0.62 0.21 275);
+  --color-accent-rose: oklch(0.65 0.21 25);
+  --color-accent-star: oklch(0.78 0.16 72);
+  --color-accent-info: oklch(0.68 0.14 278);
+
+  /* Shadows */
+  --shadow-brand-glow: 0 8px 24px -4px oklch(0.58 0.22 282 / 0.35);
+}
+
+@utility bg-hero-mesh {
+  background-color: var(--color-surface-hero);
+  background-image: 
+    radial-gradient(circle at 22% 18%, oklch(0.36 0.16 280 / 0.75) 0%, transparent 55%),
+    radial-gradient(circle at 80% 85%, oklch(0.20 0.09 275 / 0.9) 0%, transparent 60%);
+}
+
+@utility glass-panel {
+  background-color: oklch(1 0 0 / 0.04);
+  border: 1px solid oklch(1 0 0 / 0.08);
+  backdrop-filter: blur(12px);
+}
+
+@utility glass-badge {
+  background-color: oklch(1 0 0 / 0.08);
+  border: 1px solid oklch(1 0 0 / 0.10);
+}
+
+@layer base {
+  body {
+    @apply bg-surface-canvas text-ink-primary font-sans antialiased selection:bg-brand-500/30 selection:text-ink-primary;
+  }
+}
